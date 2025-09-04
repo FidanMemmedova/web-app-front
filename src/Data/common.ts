@@ -1,2 +1,2 @@
-export const API_PATH = 'http://127.0.0.1:8080/https://us-central1-mobile-assignment-server.cloudfunctions.net/'
+export const API_PATH = 'https://web-app-server-jbdt.onrender.com/https://us-central1-mobile-assignment-server.cloudfunctions.net/'
 
