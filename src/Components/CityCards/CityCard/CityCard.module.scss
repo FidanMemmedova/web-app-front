@@ -1,0 +1,158 @@
+@import "../../../Assets/scss/variables.scss";
+
+.cityCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $accent-color;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s;
+  padding: 20px;
+  cursor: pointer;
+  color: $white-color;
+
+  &.details {
+    flex-direction: column;
+    width: 30%;
+    padding: 20px;
+    justify-content: center;
+    gap: 30px;
+    text-align: center;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .cityInfo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    .cityImage {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      overflow: hidden;
+      border-radius: 7px;
+    }
+
+    .cityName {
+      font-size: $font-size-xlarge;
+      font-weight: $font-weight-medium;
+      margin-bottom: 8px;
+      color: $light-gray-color;
+    }
+
+    .cityTime {
+      color: $gray-color;
+    }
+
+  }
+
+  .cityTemp {
+    font-size: $font-size-xxlarge;
+    color: $light-gray-color;
+  }
+
+  .detailsInfo {
+    .weatherIcon {
+      max-width: 40%;
+      height: auto;
+      margin: 15px 0px;
+    }
+  }
+  .homeInfo {
+    .hideButton {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 6px;
+      background-color: $light-red-color; 
+      color: $white-color;
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+  
+      &:hover {
+        background-color: $red-color;
+        transform: translateY(-2px);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      }
+  
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.5);
+      }
+  
+      &.unhide {
+        background-color: #4caf50; 
+        &:hover {
+          background-color: #43a047;
+        }
+        &:focus {
+          box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.5);
+        }
+      }
+    }
+  }
+  
+}
+
+@media screen and (max-width: 576px) {
+  .cityCard {
+    &.details{
+      width: 45%;
+    }
+    .cityInfo {
+      .cityImage {
+        width: 80px;
+        height: 80px;
+      }
+
+      .cityName {
+        font-size: $font-size-large;
+      }
+
+      .cityTime {
+        font-size: $font-size-small;
+      }
+    }
+
+    .cityTemp {
+      font-size: $font-size-xlarge;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .cityCard {
+    flex-direction: column;
+    &.details{
+      width: 80%;
+      margin: 0 auto;
+    }
+    .cityInfo {
+      flex-direction: column;
+      .cityImage {
+        width: 80px;
+        height: 80px;
+      }
+
+      .cityName {
+        font-size: $font-size-normal;
+      }
+
+      .cityTime {
+        font-size: $font-size-xsmall;
+      }
+    }
+
+    .cityTemp {
+      font-size: $font-size-large;
+    }
+  }
+}

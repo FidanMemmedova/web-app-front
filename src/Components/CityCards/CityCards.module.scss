@@ -1,0 +1,14 @@
+.cityCards{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+.cityLink{
+    text-decoration: none;
+    color: inherit;
+}
+@media screen and (max-width: 768px) {
+    .cityCards{
+        grid-template-columns: 1fr;
+    }   
+}

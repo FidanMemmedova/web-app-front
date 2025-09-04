@@ -1,0 +1,90 @@
+@import "../../Assets/scss/variables.scss";
+
+.hiddenCitiesWrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.noHiddenText {
+  font-size: $font-size-xxxlarge;
+  font-weight: $font-weight-bold;
+  text-align: center;
+  color: $gray-color;
+  margin: 2rem 0;
+  grid-column: 1 / -1;
+}
+
+.backHomeWrapper {
+  grid-column: 1 / -1;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.backHomeButton {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background-color: $light-gray-color;
+  color: $white-color;
+  font-size: 1rem;
+  font-weight: $font-weight-semi-bold;
+  cursor: pointer;
+  transition: all 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 150px;
+
+  &:hover {
+    transform: translateY(-3px) scale(1.02);
+    background-color: $gray-color;
+  }
+
+  &:disabled {
+    background: $light-gray-color;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+}
+
+.error {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: $red-color;
+  font-weight: $font-weight-semi-bold;
+  margin-top: 2rem;
+}
+
+.loaderContainer {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40vh;
+}
+
+@media screen and (max-width: 768px) {
+  .hiddenCitiesWrapper {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .backHomeButton {
+    width: 70%;
+    padding: 1rem 0;
+    font-size: $font-size-normal;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hiddenCitiesWrapper {
+    padding: 15px;
+    gap: 10px;
+  }
+
+  .backHomeButton {
+    width: 80%;
+    padding: 1.2rem 0;
+    font-size: $font-size-large;
+  }
+}

@@ -1,0 +1,49 @@
+@import "../../Assets/scss/variables.scss";
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: nowrap;
+}
+
+.searchBarWrapper {
+  flex: 1 1 auto;
+  min-width: 150px;
+}
+
+.refreshButton {
+  flex: 0 0 auto;
+  padding: 0.9rem 1.5rem;
+  background-color: $light-red-color;
+  color: $white-color;
+  font-weight: $font-weight-semi-bold;
+  font-size: $font-size-normal;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+
+  &:hover:not(:disabled) {
+    background-color: $red-color;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+
+  &:disabled {
+    background-color: $light-gray-color;
+    cursor: not-allowed;
+  }
+
+  @media (max-width: 1024px) {
+    max-width: 150px;
+    flex: 0 0 auto;
+  }
+
+  @media (max-width: 786px) {
+    max-width: 120px;
+  }
+}
