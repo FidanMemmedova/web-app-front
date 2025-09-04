@@ -15,11 +15,11 @@ export const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/city/:cityName",
+        path: "city/:cityName",
         element: <CityDetails />, 
       },
       {
-        path: "/hidden",
+        path: "hidden",
         element: <HiddenCities />
       },
       {
